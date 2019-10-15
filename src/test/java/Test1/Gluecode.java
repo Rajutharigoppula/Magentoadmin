@@ -239,4 +239,23 @@ public class Gluecode {
 	
 	}
 	
+
+	@Then("^Create a cart rule \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+	public void method11(String arg1,String arg2,String arg3) throws InterruptedException
+	{
+	Pd.marketing();Thread.sleep(2000);
+	Pd.catalogpr();Thread.sleep(2000);
+	Pd.addnewrule();Thread.sleep(4000);
+	Pd.rulename(arg1);Thread.sleep(2000);
+	Pd.ruledesc(arg2);
+	Pd.websites();
+	Pd.CustomerGroups();
+	Pd.Actions();Thread.sleep(2000);
+	Pd.DiscountAmount(arg3);Thread.sleep(2000);
+	Pd.saverule();
+	wait.until(ExpectedConditions.visibilityOf(Pd.savedrulemsg));
+		
+	}
+	
+	
 }

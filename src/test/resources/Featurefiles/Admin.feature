@@ -37,13 +37,19 @@ Feature: Customer module
     Then Create a product "Typeprod1" and "Typeprodsku1" and "20"
     And close the browser
     
-  @smoketest @Test14
+  @Test14
   Scenario: Product update from Magento admin
     Given open application with "chrome"
     Then login in to admin "admin" and "i95devteam"
     Then Update a product "XSASA" and "Updatepro2" and "updatesku2" and "30"
     And close the browser
     
+ @smoketest @Test15
+  Scenario: Cart Price rule creation in Magento
+    Given open application with "chrome"
+    Then login in to admin "admin" and "i95devteam"
+    Then Create a cart rule "Testrule10" and "Ruledesc" and "20"
+    And close the browser
     
     
     

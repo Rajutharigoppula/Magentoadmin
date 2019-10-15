@@ -39,6 +39,29 @@ public class Product {
 	@FindBy(xpath="//a[@class='action-menu-item']")
 	public WebElement edit;
 	
+	//cart rule
+	@FindBy(xpath="//*[@id='menu-magento-backend-marketing']")
+	public WebElement marketing;
+	@FindBy(xpath="//*[text()='Catalog Price Rule']/parent::*")
+	public WebElement catalogpr;
+	@FindBy(xpath="//button[@id='add']")
+	public WebElement addnewrule;
+	@FindBy(xpath="//*[@name='name']")
+	public WebElement rulename;
+	@FindBy(xpath="//*[@name='description']")
+	public WebElement ruledesc;
+	@FindBy(xpath="//option[contains(text(),'Main Website')]")
+	public WebElement websites;
+	@FindBy(xpath="(//*[@name='customer_group_ids']/child::*)[1]")
+	public WebElement CustomerGroups;
+	@FindBy(xpath="(//*[@class='admin__collapsible-title'])[2]")
+	public WebElement Actions;
+	@FindBy(xpath="//*[@name='discount_amount']")
+	public WebElement DiscountAmount;
+	@FindBy(xpath="//button[@id='save']")
+	public WebElement saverule;
+	@FindBy(xpath="//div[contains(text(),'You saved the rule.')]")
+	public WebElement savedrulemsg;
 	
 	 // operations
 	 
@@ -96,15 +119,46 @@ public class Product {
 		edit.click();
 	}
 	
+	public void marketing()
+	{
+		marketing.click();
+	}
+	public void catalogpr()
+	{
+		catalogpr.click();
+	}
+	public void addnewrule()
+	{
+		addnewrule.click();
+	}
+	public void rulename(String arg)
+	{
+		rulename.sendKeys(arg);
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void ruledesc(String arg)
+	{
+		ruledesc.sendKeys(arg);
+	}
+	public void websites()
+	{
+		websites.click();
+	}
+	public void CustomerGroups()
+	{
+		CustomerGroups.click();
+	}
+	public void Actions()
+	{
+		Actions.click();
+	}
+	public void DiscountAmount(String arg)
+	{
+		DiscountAmount.sendKeys(arg);
+	}
+	public void saverule()
+	{
+		saverule.click();
+	}
 	
 }
