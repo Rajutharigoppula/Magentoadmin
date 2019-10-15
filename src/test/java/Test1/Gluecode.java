@@ -206,24 +206,37 @@ public class Gluecode {
 	public void method12(String arg1, String arg2,String arg3) throws InterruptedException
 	{
 		
-	Pd.catalog();
-	Thread.sleep(2000);
-	Pd.products();
-	Thread.sleep(4000);
-	Pd.addnewproduct();
-	Thread.sleep(4000);
-	Pd.producname(arg1);
-	Thread.sleep(2000);
-	Pd.sku.clear();
-	Thread.sleep(2000);
+	Pd.catalog();	Thread.sleep(2000);
+	Pd.products();	Thread.sleep(4000);
+	Pd.addnewproduct();	Thread.sleep(4000);
+	Pd.producname(arg1);	Thread.sleep(2000);
+	Pd.sku.clear();	Thread.sleep(2000);
 	Pd.sku(arg2);
-	Pd.price(arg3);
-	Thread.sleep(2000);
+	Pd.price(arg3);	Thread.sleep(2000);
 	Pd.save();
 	wait.until(ExpectedConditions.visibilityOf(Pd.successmsg));
 
 	}
+	@Then("^Update a product \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+	public void method13(String arg1, String arg2,String arg3,String arg4) throws InterruptedException
+	{
+		
+	Pd.catalog();Thread.sleep(2000);
+	Pd.products();Thread.sleep(4000);
+	Pd.filter();Thread.sleep(2000);
+	Pd.entersku.clear();
+	Pd.entersku(arg1);
+	Pd.applyfilter();Thread.sleep(4000);
+	Pd.edit();Thread.sleep(3000);
+	Pd.producname.clear();
+	Pd.producname(arg2);
+	Pd.sku.clear();	Thread.sleep(2000);
+	Pd.sku(arg3);	Thread.sleep(2000);
+	Pd.price.clear();Thread.sleep(2000);
+	Pd.price(arg4);	Thread.sleep(2000);
+	Pd.save();	Thread.sleep(2000);
+	wait.until(ExpectedConditions.visibilityOf(Pd.successmsg));
 	
-	
+	}
 	
 }

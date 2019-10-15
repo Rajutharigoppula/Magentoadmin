@@ -29,10 +29,15 @@ public class Product {
 	@FindBy(xpath="//div[contains(text(),'You saved the product.')]")
 	public WebElement successmsg;
 	
-	
-	
-	
-	
+	//updation product
+	@FindBy(xpath="//button[contains(text(),'Filters')]")
+	public WebElement filter;
+	@FindBy(xpath="//*[@name='sku']")
+	public WebElement entersku;
+	@FindBy(xpath="//span[contains(text(),'Apply Filters')]")
+	public WebElement applyfilter;
+	@FindBy(xpath="//a[@class='action-menu-item']")
+	public WebElement edit;
 	
 	
 	 // operations
@@ -72,4 +77,34 @@ public class Product {
 	{
 		save.click();
 	}
+// product updation
+	
+	public void filter()
+	{
+		filter.click();
+	}
+	public void entersku(String arg)
+	{
+		entersku.sendKeys(arg);
+	}
+	public void applyfilter()
+	{
+		applyfilter.click();
+	}
+	public void edit()
+	{
+		edit.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

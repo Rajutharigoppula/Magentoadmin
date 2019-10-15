@@ -16,11 +16,6 @@ plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.
 
 //plugin = {"pretty","html:target"})
 
-
-
-
-// 
-
 public class Testrunnerclass 
 {
 	@AfterClass
