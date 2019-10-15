@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\Featurefiles\\Admin.feature",tags= {"@smoketest"},monochrome = true, 
+@CucumberOptions(features="src\\test\\resources\\Featurefiles\\Product.feature",tags= {"@smoketest"},monochrome = true, 
 plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
 
 //plugin = {"pretty","html:target"})

@@ -240,7 +240,7 @@ public class Gluecode {
 	}
 	
 
-	@Then("^Create a cart rule \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+	@Then("^Create a catalog rule \"(.*)\" and \"(.*)\" and \"(.*)\"$")
 	public void method11(String arg1,String arg2,String arg3) throws InterruptedException
 	{
 	Pd.marketing();Thread.sleep(2000);
@@ -257,5 +257,24 @@ public class Gluecode {
 		
 	}
 	
-	
+	@Then("^Create a cart rule \"(.*)\" and \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+	public void method14(String arg1,String arg2,String arg3,String arg4) throws InterruptedException
+	{
+	Pd.marketing();Thread.sleep(2000);
+	Pd.cartpr();Thread.sleep(2000);
+	Pd.addnewrule();Thread.sleep(4000);
+	Pd.rulename(arg1);Thread.sleep(2000);
+	Pd.ruledesc(arg2);
+	Pd.websites();
+	Pd.CustomerGroups();
+	Select s = new Select(Pd.coupontype);
+	s.selectByVisibleText("Specific Coupon");
+	Thread.sleep(2000);
+	Pd.couponcode(arg3);
+	Pd.Actions();Thread.sleep(2000);
+	Pd.DiscountAmount(arg4);Thread.sleep(2000);
+	Pd.saverule();
+	wait.until(ExpectedConditions.visibilityOf(Pd.savedrulemsg));
+
+	}
 }

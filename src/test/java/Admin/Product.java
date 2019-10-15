@@ -39,7 +39,7 @@ public class Product {
 	@FindBy(xpath="//a[@class='action-menu-item']")
 	public WebElement edit;
 	
-	//cart rule
+	//catalog rule
 	@FindBy(xpath="//*[@id='menu-magento-backend-marketing']")
 	public WebElement marketing;
 	@FindBy(xpath="//*[text()='Catalog Price Rule']/parent::*")
@@ -62,6 +62,18 @@ public class Product {
 	public WebElement saverule;
 	@FindBy(xpath="//div[contains(text(),'You saved the rule.')]")
 	public WebElement savedrulemsg;
+	
+	//cart rule
+	@FindBy(xpath="//*[text()='Cart Price Rules']/parent::*")
+	public WebElement cartpr;
+	@FindBy(xpath="(//*[@class='admin__collapsible-title'])[3]")
+	public WebElement cartActions;
+	
+	@FindBy(xpath="//*[@name='coupon_type']")
+	public WebElement coupontype;
+	@FindBy(xpath="//*[@name='coupon_code']")
+	public WebElement couponcode;
+	
 	
 	 // operations
 	 
@@ -160,5 +172,17 @@ public class Product {
 	{
 		saverule.click();
 	}
+	public void cartpr()
+	{
+		cartpr.click();
+	}
+	public void cartActions()
+	{
+		cartActions.click();
+	}
 	
+	public void couponcode(String arg)
+	{
+		couponcode.sendKeys(arg);
+	}
 }
