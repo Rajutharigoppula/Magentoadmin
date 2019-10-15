@@ -11,10 +11,15 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\Featurefiles\\Admin.feature", 
-plugin = {"pretty","html:target"})
+@CucumberOptions(features="src\\test\\resources\\Featurefiles\\Admin.feature",tags= {"@smoketest"},monochrome = true, 
+plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html"})
 
-// ,tags= {"@smoketest"}
+//plugin = {"pretty","html:target"})
+
+
+
+
+// 
 
 public class Testrunnerclass 
 {
@@ -25,7 +30,7 @@ public class Testrunnerclass
 	Reporter.loadXMLConfig(new File("src/test/resources/extent-config.xml"));
 	Reporter.setSystemInfo("Test User", System.getProperty("user.name"));
 	Reporter.setSystemInfo("User Name", "Raju");
-	Reporter.setSystemInfo("Application Name", "Magento");
+	Reporter.setSystemInfo("Application Name", "MagentoAdmin");
 	Reporter.setSystemInfo("Operating System Type", System.getProperty("os.name").toString());
 	Reporter.setSystemInfo("Environment", "Production");
 	Reporter.setTestRunnerOutput("Test Execution Cucumber Report");

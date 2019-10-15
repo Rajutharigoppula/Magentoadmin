@@ -12,25 +12,32 @@ Feature: Customer module
     
         
 	@Test2
-  Scenario: create new customer from admin
+  Scenario: Customer creation along with address from Magento admin 
     Given open application with "chrome" 
     When create new customer from admin "admin" and "i95devteam" and "Chandra" and "shekar" and "chan5@jiva.com" 
     Then create address "Test Street" and "Test city" and "12345789" and "123-123-4567"
     And click on save customer
     And close the browser
     
-  @Test3
+  @Test11
   Scenario: Customer group creation from admin
   Given open application with "chrome"
   Then login in to admin "admin" and "i95devteam"
   When Create customer group "Test2group"
   And close the browser
    
-@smoketest @Test4
-  Scenario: Customer group creation from admin
+@Test12
+  Scenario: Customer group assign for the customer from Magento admin
   Given open application with "chrome"
   Then login in to admin "admin" and "i95devteam"
   Then Assign customer group to a customer "chan2@gm.com"
+  And close the browser
+  
+@smoketest  @Test13
+  Scenario: Product creation from Magento admin
+  Given open application with "chrome"
+  Then login in to admin "admin" and "i95devteam"
+  Then Create a product "Typeprod1" and "Typeprodsku1" and "20"
   And close the browser
   
   

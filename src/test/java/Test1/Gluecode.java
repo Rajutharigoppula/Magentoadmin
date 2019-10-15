@@ -8,10 +8,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Admin.Customerpage;
+import Admin.Product;
 import Frontend.Homepage;
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
@@ -29,7 +31,7 @@ public class Gluecode {
 	public Scenario S; 
 	public Properties Pro;
 	public WebDriverWait wait;
-		
+	public Product Pd;
                                                                                                                                                                                                    
 	@Before
 	public void method1 (Scenario s) throws IOException 
@@ -62,7 +64,8 @@ public class Gluecode {
     driver.manage().window().maximize();			
     Hp = new Homepage(driver);
     Cp = new Customerpage(driver);
-  
+    Pd = new Product(driver);
+    
 	driver.get(Pro.getProperty("url2"));
 	wait = new WebDriverWait(driver,50);
 	  }
@@ -196,8 +199,29 @@ public class Gluecode {
 		Cp.grp();
 		Thread.sleep(6000);
 		Cp.ok();
-				
 		
+	}
+
+	@Then("^Create a product \"(.*)\" and \"(.*)\" and \"(.*)\"$")
+	public void method12(String arg1, String arg2,String arg3) throws InterruptedException
+	{
+		
+	Pd.catalog();
+	Thread.sleep(2000);
+	Pd.products();
+	Thread.sleep(4000);
+	Pd.addnewproduct();
+	Thread.sleep(4000);
+	Pd.producname(arg1);
+	Thread.sleep(2000);
+	Pd.sku.clear();
+	Thread.sleep(2000);
+	Pd.sku(arg2);
+	Pd.price(arg3);
+	Thread.sleep(2000);
+	Pd.save();
+	wait.until(ExpectedConditions.visibilityOf(Pd.successmsg));
+
 	}
 	
 	
