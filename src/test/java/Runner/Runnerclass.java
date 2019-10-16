@@ -1,4 +1,4 @@
-package Test1;
+package Runner;
 
 import java.io.File;
 
@@ -16,7 +16,7 @@ plugin={"com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.
 
 //plugin = {"pretty","html:target"})
 
-public class Testrunnerclass 
+public class Runnerclass 
 {
 	@AfterClass
 	public static void setup()

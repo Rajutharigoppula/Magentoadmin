@@ -1,7 +1,7 @@
 #Author: raju.tarigoppula@jivainfotech.com
 
 @TestB
-Feature: Product Module
+Feature: Product Module (Admin)
 
  @Test13
   Scenario: Product creation from Magento admin

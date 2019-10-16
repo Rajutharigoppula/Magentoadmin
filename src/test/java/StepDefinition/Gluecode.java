@@ -1,4 +1,4 @@
-package Test1;
+package StepDefinition;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,8 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Admin.Customerpage;
-import Admin.Product;
+import AdminPages.Customerpage;
+import AdminPages.Orders;
+import AdminPages.Product;
 import Frontend.Homepage;
 import cucumber.api.Scenario;
 import cucumber.api.java.Before;
@@ -32,6 +33,7 @@ public class Gluecode {
 	public Properties Pro;
 	public WebDriverWait wait;
 	public Product Pd;
+	public Orders Od;
                                                                                                                                                                                                    
 	@Before
 	public void method1 (Scenario s) throws IOException 
@@ -65,6 +67,7 @@ public class Gluecode {
     Hp = new Homepage(driver);
     Cp = new Customerpage(driver);
     Pd = new Product(driver);
+    Od = new Orders(driver);
     
 	driver.get(Pro.getProperty("url2"));
 	wait = new WebDriverWait(driver,50);

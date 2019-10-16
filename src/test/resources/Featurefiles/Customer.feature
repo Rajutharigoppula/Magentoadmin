@@ -1,5 +1,5 @@
 @TestA
-Feature: Customer module
+Feature: Customer module (Admin)
 
   @Test1
   Scenario: create new customer from admin
@@ -33,6 +33,22 @@ Feature: Customer module
  
     
     
+@Test3
+  Scenario: Multiple addresses creation from Magento admin 
+@Test4
+  Scenario: Customer update from Magento admin 
+@Test5
+  Scenario: Customer Email Update from Magento admin 
+@Test6
+  Scenario: customer creation with address from Magento admin, without assigning billing and shipping
+@Test7
+  Scenario: Customer creation with same billing and shipping address from Magento admin 
+@Test8
+  Scenario: Customer creation with different billing and shipping address from Magento admin 
+@Test9
+  Scenario: Customer address update from Magento admin 
+@Test10
+  Scenario: Interchanging the billing address and shipping address from Magento admin  for customer
     
     
     
